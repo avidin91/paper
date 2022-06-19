@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yandex.contest</title>
+</head>
+<body>
+    <div class="root">
+        <div class="el">У каждого объявления есть свои стили Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas perspiciatis veritatis velit obcaecati impedit amet ipsum vel? Aut consectetur reprehenderit, at distinctio totam ducimus vitae, labore illo itaque amet reiciendis.</div>
+        <div class="el">Их неШирину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50Ширину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50Ширину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50Ширину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50 нужно менять</div>
+        <div class="el">КаждШирину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50Ширину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+
+            Lorem ipsum dolor sit Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50
+            Ширину элемента root, при необходимости вы можете определить, но в тестах она может быть разная amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50ое объявление должно быть свободным по высоте</div>
+        <div class="el">А вШирину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50от ширину нужно будет выставить</div>
+        <div class="el">Ширину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50
+            Ширину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50
+            Ширину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50Ширину элемента root, при необходимости вы можете определить, но в тестах она может быть разная
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente delectus, numquam error tempora amet, natus odio adipisci necessitatibus ea nam quae nisi reprehenderit exercitationem mollitia. Aliquam doloremque molestias deleniti obcaecati?50
+        </div>
+        
+      </div>
+
+    <script>
+        let columnBox = document.querySelector('.root');
+        let column = document.querySelectorAll('.el');
+        let columnLength = column.length;
+        let columnNumber = 3;
+        let columnMargin = 15;
+        const screen = Math.max(
+            document.body.scrollWidth, document.documentElement.scrollWidth,
+            document.body.offsetWidth, document.documentElement.offsetWidth,
+            document.body.clientWidth, document.documentElement.clientWidth
+        );
+        let adaptive = ((screen - (columnMargin * columnNumber * 2)) / columnNumber) - 60;
+
+        function renderWaterfall(rootNode, columnCount, elementGap) {
+            rootNode.style.display = 'flex';
+            rootNode.style.flexWrap = 'wrap';
+            rootNode.style.justifyContent = 'space-between';
+            rootNode.style.alignItems = 'center';
+
+            let check;
+            if (columnNumber !== 1 && columnNumber !== 2 && columnNumber !== 3 && columnNumber !== 4 && columnNumber !== 5) {
+                alert('Минимальное количество колонок: 1. Максимальное количество колонок: 5')
+            } else {
+                    for (let i = 0; i < column.length; i++) {
+                        column[i].style.margin = elementGap +'px';
+                        column[i].style.padding = 10 + 'px';
+                        column[i].style.border = '1px solid black';
+                        column[i].style.borderRadius = '5px';
+                        column[i].style.backgroundColor = '#FFE6D1';
+
+                        if (columnNumber == 1) {
+                            column[i].style.width = adaptive + 'px';
+                        } else if (columnNumber == 2) {
+                            column[i].style.width = adaptive + 'px';
+                        } else if (columnNumber == 3) {
+                            column[i].style.width = adaptive + 'px';
+                        } else if (columnNumber == 4) {
+                            column[i].style.width = adaptive + 'px';
+                        } else if (columnNumber == 5) {
+                            column[i].style.width = adaptive + 'px';
+                        }
+                    } 
+                }
+            
+                document.body.style.backgroundColor = '#FDF7ED';
+            }
+
+        renderWaterfall(columnBox, columnNumber, columnMargin)
+
+    </script>
+</body>
+</html>
